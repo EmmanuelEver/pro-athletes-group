@@ -9,18 +9,20 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+/*	background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;*/
 }
 
 body{
 	font-family: 'Bebas Neue', cursive;
-	width: 100vw;
+	width: 100%;
 	height: 100%;
 	font-size: 16px;
 	font-weight: 400;
 }
 .banner{
 	background: var(--black);
-	width: 100%;
 	overflow: hidden;
 }
 .banner__wrapper{
@@ -92,10 +94,8 @@ body{
 }
 .hero__image{
 	align-self: flex-end;
+	width: 100%;
 	max-width: 700px;
-}
-.hero__image img{
-
 }
 
 .hero__content__buttons button:first-child{
@@ -136,7 +136,7 @@ body{
 .business-nonProfit{
 	margin: 0 auto;
 	height: 928px;
-	width: 1440px;
+	max-width: 1440px;
 	padding: 50px 160px;
 	display: flex;
 	flex-direction: column;
@@ -249,12 +249,14 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
 .division__text{
 	font-size: 3rem;
 	font-weight: 400;
 	color: var(--white);
 	position: relative;
+	line-height: 1;
 }
 .division__text:before, .division__text:after{
 	content: "";
@@ -272,7 +274,8 @@ body{
 .division__text:after{
 	right: -60px;
 	transform: translateX(100%);
-} 
+}
+
 footer{
 	background: var(--black);
 	height: 307px;
@@ -308,6 +311,11 @@ footer{
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif; 
 }
+.copyright{
+	color: #9B9B9B;
+	text-align: center;
+}
+
 .btn{
 	width: 175px;
 	height: 45px;
@@ -318,11 +326,9 @@ footer{
 	border: none;
 	outline-width: 0;
 	font-weight: 400;
+	cursor: pointer;
 }
-.copyright{
-	color: #9B9B9B;
-	text-align: center;
-}
+
 .btn--red{
 	background: var(--red);
 	color: var(--white);
@@ -336,4 +342,182 @@ footer{
 .btn--green{
 	background: var(--green);
 	color: var(--white);
+}
+.nav__hamburger{
+	display: none;
+}
+.backdrop{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	z-index: 20;
+}
+
+.backdrop.show{
+	display: block;
+}
+
+
+
+
+
+
+@media screen and (max-width: 414px){
+	.nav{
+		height: 75px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0 20px;
+	}
+	.nav__brand{
+		height: 50px;
+	}
+	.nav__items{
+		display: none;
+		height: 100vh;
+	    width: 80%;
+	    position: fixed;
+	    top: 0;
+	    left: -80%;
+	    transform: translateX(0%);
+	    z-index: 30;
+	    flex-direction: column;
+	    align-items: flex-start;
+	    background: var(--red);
+	    padding: 87px 48px 0 41px;
+	    transition: all 0.2s ease-in;
+	}
+	.nav__items.show{
+		display: flex;
+	}
+	.nav__items__item:not(:first-child) {
+	    margin-left: 0;
+	}
+	.nav__items__item{
+	    margin-left: 0;
+	    margin-bottom: 17px;
+	    font-size: 2.25rem;
+	}
+	.nav__hamburger{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.bar{
+		width: 20px;
+		height: 2px;
+		background: var(--white);
+	}
+	.bar:not(:last-child){
+		margin-bottom: 3px;
+	}
+	.hero{
+		margin-top: 75px;
+		flex-direction: column;
+		height: auto;
+		padding: 0;
+	}
+	.hero__image img{
+		width: 100%;
+	}
+	.hero__content{
+		padding: 29px 27px 0 28px;
+		margin-right: 0;
+		text-align: center;
+	}
+	.about{
+		height: auto;
+		padding: 50px 27px 52px 28px;
+	}
+
+	.businesses, .nonProfit{
+		flex-direction: column;
+		height: auto;
+		padding: 50px 27px 0 28px;
+	}
+
+	.businesses__image, .nonProfit__image{
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.business-nonProfit{
+		padding: 0;
+		height: auto;
+	}
+	
+	.nonProfit__image{
+		width: 100%;
+		order: 0;
+		margin-left: 0;
+	}
+	.nonProfit__details, .businesses__details{
+		text-align: center;
+	}
+	.events{
+		padding: 102px 0 82px 0;
+		flex-direction: column;
+		height: auto;
+	}
+	.event{
+		flex-direction: column;
+	}
+	.event__details{
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 28px;
+	}
+	.event__image{
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
+	.event__image img{
+		width: 200px;
+		object-fit: contain;
+	}
+
+	.division{
+		padding: 50px 27px 50px 28px;
+		height: auto;
+	} 
+
+	footer{
+		padding: 50px 27px 0 28px;
+		height: auto;
+	}
+	.services{
+		flex-direction: column;
+	}
+	.services__image, .services__content{
+		width: 100%;
+	}
+	.services__content{
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	.services__image{
+		margin-bottom: 30px;
+		padding: 0 10px;
+	}
+	.services__image img{
+		margin-right: 0;
+		width: 100%;
+		object-fit: contain;
+	}
+	.copyright{
+		width: 100%;
+		padding: 24px 37px 27px 37px;
+	}
+	.btn{
+		width: 150px;
+		height: 45px;
+	}
+
 }
