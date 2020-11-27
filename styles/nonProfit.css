@@ -1,0 +1,41 @@
+.nonProfit__image{
+	position: absolute;
+	bottom: 0;
+	right: -100px;
+	width:  828px;
+}
+
+@media screen and (max-width: 599px){
+	.nonProfit__image{
+		position: relative;
+		bottom: unset;
+		right: unset;
+		width:  100%;
+		margin-bottom: -50px;
+	}
+}
+
+
+@media screen and (max-width: 799px) and (min-width: 600px){
+	.nonProfit__image{
+		position: absolute;
+		bottom: 0;
+		right: -100px;
+		width:  828px;
+	}
+
+}
+
+@media screen and (max-width: 1099px) and (min-width: 800px){
+
+
+}
+@media screen and (max-width: 1439px) and (min-width: 1100px){
+
+	.nonProfit__image{
+		position: absolute;
+		bottom: 0;
+		right: -200px;
+		width:  828px;
+	}
+}
