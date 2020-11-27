@@ -327,6 +327,52 @@ footer{
 	text-align: center;
 }
 
+
+
+.form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.form-rows{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.form-row{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-group{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.form-group label{
+	font-size: 1rem;
+	font-family: 'Roboto', sans-serif;
+	line-height: 2;
+	margin: 7px 0;
+	color: var(--lightgrey);
+}
+.form-group input, .form-group textarea{
+	width: 100%;
+	height: 55px;
+	padding: 19px 12px;
+}
+.form-group textarea{
+ 	height: 199px;
+ 	resize:none;
+ }
+.form button{
+	margin-top: 40px;
+}
+
+
 .btn{
 	width: 175px;
 	height: 45px;
@@ -533,6 +579,17 @@ footer{
 	.copyright{
 		width: 100%;
 		padding: 24px 37px 27px 37px;
+	}
+
+	.form-rows{
+		flex-direction: column;
+	}
+	.form-row{
+		width: 100%;
+	}
+	.form button{
+		margin-top: 30px;
+		align-self: center;
 	}
 	.btn{
 		width: 150px;
